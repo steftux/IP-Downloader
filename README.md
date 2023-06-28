@@ -6,9 +6,11 @@ Script allows for flitering and downloads the IPs into one big file it also make
 The script grabs the json file directly from Microsoft (no more manual updating needed).
 
 ## How to use
-* it will save to C:\temp unless you update the save location variable
-* change your region filter as needed to suit your needs
-* the filter includes null regions as some of the data doesn't have a region
+mandatory parameters only: exportlocation: Save location (folder will be created if it does not exist)
+* ./Azure-IP-Downloader.ps1 -exportlocation "./IPs" 
+
+Optional parameters: Region and Service filters. If not passed, defaults will be used
+* ./Azure-IP-Downloader.ps1 -exportlocation "./IPs" -regionFilter northeurope -serviceFilter LogicApps
 
 ## known issues
 * If the account that is running the script doesn't have read write to the save location it will error.
