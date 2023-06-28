@@ -1,4 +1,4 @@
-# Azure IP filter and downloader script v1.2.0
+# Azure IP filter and downloader script v1.3.0
 # Author: Daniel Keer, Stefan Koch
 # Author URI: https://thedxt.ca
 # Script URI: https://github.com/thedxt/IP-Downloader

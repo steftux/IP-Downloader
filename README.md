@@ -13,10 +13,11 @@ Optional parameters: Region and Service filters. If not passed, defaults will be
 * ./Azure-IP-Downloader.ps1 -exportlocation "./IPs" -regionFilter northeurope -serviceFilter LogicApps
 
 ## known issues
-* If the account that is running the script doesn't have read write to the save location it will error.
+* If the account that is running the script doesn't have read write access to the specified save location it will fail.
 
 ## Release Notes
-
+### Version 1.3.0
+* added parameters and service filter
 ### Version 1.2.0
 * deployed fix to no longer need manual updating of the Microsoft URI to download the JSON file. Thanks [@erikplekenpol](https://github.com/erikplekenpol) for the fix.
 * deployed fix to auto create the save location if it doesn't exist.
