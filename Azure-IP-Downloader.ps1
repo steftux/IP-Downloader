@@ -8,8 +8,15 @@
 # script allows for flitering and downloads the ips into one big file
 # it also makes a file just for IPv4 and IPv6
 
-#save location
-$exportlocation = "C:\temp\"
+param
+(
+[Parameter(Mandatory,HelpMessage='Enter exportlocation!')]
+$exportlocation = "./IPs",
+#[Parameter(Mandatory,HelpMessage='Enter regionFilter!')]
+$regionFilter = "westeurope",
+#[Parameter(Mandatory,HelpMessage='Enter serviceFilter!')]
+$serviceFilter = "LogicApps"
+)
 
 # function to check if save location exists if not create it
 function exportloc-check{
@@ -18,13 +25,8 @@ if (-not (Test-Path $exportlocation))
 New-Item -ItemType Directory $exportlocation | out-null
 }
 }
-
-# run the function
+# run the ceck directory function
 exportloc-check
-
-# add filter
-$regionFilter = "westeurope"
-$serviceFilter = "LogicApps"
 
 #grab URI from txt file
 $LocationURI = Invoke-WebRequest -uri "https://www.microsoft.com/en-us/download/confirmation.aspx?id=56519"
